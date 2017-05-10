@@ -61,10 +61,10 @@ def draw_graph(graph, label):
 
 def main():
     entity = []
-    for i in range(1, 10):
+    for i in range(1, 15):
         file = open("data/" + str(i) + ".txt", "r")
         string = remove_non_ascii(file.read())
-        names = extract_organizations(string)
+        names = extract_names(string)
         names = list(set(names))
         entity.append(names)
 
@@ -85,6 +85,5 @@ def main():
                         temp[val] = 1
 
     draw_graph(graph, label)
-    print label
 
 main()
